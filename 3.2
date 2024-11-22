@@ -1,0 +1,19 @@
+#include <iostream>
+
+int main() {
+    char znak;
+
+    std::cout << "Wpisz dowolny znak. Uwaga! Wpisanie znaku t zakonczy program\n";
+
+    do {
+        std::cout << "Podaj znak: ";
+        std::cin >> znak;
+
+        if (znak != 't') {
+            std::cout << "Wpisano: " << znak << std::endl;
+        }
+    } while (znak != 't');
+
+    std::cout << "Program zakonczony. Wpisano znak 't'.\n";
+    return 0;
+}
