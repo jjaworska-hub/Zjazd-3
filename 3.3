@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cmath> 
+
+int main() {
+    float a, b, c;
+
+    std::cout << "a: ";
+    std::cin >> a;
+    std::cout << "b: ";
+    std::cin >> b;
+    std::cout << "c: ";
+    std::cin >> c;
+
+    std::cout << "Wzor rownania kwadratowego: " << a << "x^2 + " << b << "x + " << c << " = 0" << std::endl;
+
+    float delta = b * b - 4 * a * c;
+
+    if (a == 0) {
+        if (b != 0) {
+            float x = -c / b;
+            std::cout << "Rownanie liniowe. Jedno rozwiazanie: x = " << x << std::endl;
+        } else {
+            if (c == 0) {
+                std::cout << "Rownanie tozsamosciowe. Nieskonczenie wiele rozwiazan." << std::endl;
+            } else {
+                std::cout << "Brak rozwiazan." << std::endl;
+            }
+        }
+    } else {
+        if (delta > 0) {
+            float x1 = (-b - sqrt(delta)) / (2 * a);
+            float x2 = (-b + sqrt(delta)) / (2 * a);
+            std::cout << "Rownanie ma dwa rozwiazania: x1 = " << x1 << ", x2 = " << x2 << std::endl;
+        } else if (delta == 0) {
+            float x = -b / (2 * a);
+            std::cout << "Rownanie ma jedno podwojne rozwiazanie: x = " << x << std::endl;
+        } else {
+            std::cout << "Rownanie nie ma rozwiazan w zbiorze liczb rzeczywistych." << std::endl;
+        }
+    }
+
+    return 0;
+}
